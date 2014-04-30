@@ -1,45 +1,39 @@
-Support
-* [rcodetools](http://rubygems.org/gems/rcodetools).
-* [seeing_is_believing](https://github.com/JoshCheek/seeing_is_believing)
+Use xmpfilter directly from vim, with no external (e.g. gem) dependencies
 
 ![Example](https://github.com/t9md/t9md/blob/master/img/vim-ruby-xmpfilter_anime.gif?raw=true)
 
+## Installation (with Pathogen)
 
-### [help](https://github.com/t9md/vim-ruby-xmpfilter/blob/master/doc/xmpfilter.txt)
+```
+cd ~/.vim/bundle
+git clone https://github.com/indirect/vim-ruby-xmpfilter.git
+```
 
-# .vimrc sample
-==================================
-vim-ruby-xmpfilter doesn't provide any default keymap.
-See sample configuration below.
+See, no dependencies!
 
-'xmpfilter' user
+## Usage
 
-    autocmd FileType ruby nmap <buffer> <D-m> <Plug>(xmpfilter-mark)
-    autocmd FileType ruby xmap <buffer> <D-m> <Plug>(xmpfilter-mark)
-    autocmd FileType ruby imap <buffer> <D-m> <Plug>(xmpfilter-mark)
+vim-ruby-xmpfilter doesn't provide a default keymap.
+Add something like this to your `.vimrc`.
 
-    autocmd FileType ruby nmap <buffer> <D-r> <Plug>(xmpfilter-run)
-    autocmd FileType ruby xmap <buffer> <D-r> <Plug>(xmpfilter-run)
-    autocmd FileType ruby imap <buffer> <D-r> <Plug>(xmpfilter-run)
+### vim (<leader>m & <leader>r)
 
-'seeing_is_believing' user
+    autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+    autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+    autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
 
-    let g:xmpfilter_cmd = "seeing_is_believing"
+    autocmd FileType ruby nmap <buffer> <leader>r <Plug>(xmpfilter-run)
+    autocmd FileType ruby xmap <buffer> <leader>r <Plug>(xmpfilter-run)
+    autocmd FileType ruby imap <buffer> <leader>r <Plug>(xmpfilter-run)
 
-    autocmd FileType ruby nmap <buffer> <D-m> <Plug>(seeing_is_believing-mark)
-    autocmd FileType ruby xmap <buffer> <D-m> <Plug>(seeing_is_believing-mark)
-    autocmd FileType ruby imap <buffer> <D-m> <Plug>(seeing_is_believing-mark)
+### MacVim (⌥M & ⌥R)
 
-    autocmd FileType ruby nmap <buffer> <D-c> <Plug>(seeing_is_believing-clean)
-    autocmd FileType ruby xmap <buffer> <D-c> <Plug>(seeing_is_believing-clean)
-    autocmd FileType ruby imap <buffer> <D-c> <Plug>(seeing_is_believing-clean)
+To use the option key as as meta in MacVim, run `:set macmeta`.
 
-    " xmpfilter compatible
-    autocmd FileType ruby nmap <buffer> <D-r> <Plug>(seeing_is_believing-run_-x)
-    autocmd FileType ruby xmap <buffer> <D-r> <Plug>(seeing_is_believing-run_-x)
-    autocmd FileType ruby imap <buffer> <D-r> <Plug>(seeing_is_believing-run_-x)
+    autocmd FileType ruby nmap <buffer> <M-m> <Plug>(xmpfilter-mark)
+    autocmd FileType ruby xmap <buffer> <M-m> <Plug>(xmpfilter-mark)
+    autocmd FileType ruby imap <buffer> <M-m> <Plug>(xmpfilter-mark)
 
-    " auto insert mark at appropriate spot.
-    autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing_is_believing-run)
-    autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing_is_believing-run)
-    autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing_is_believing-run)
+    autocmd FileType ruby nmap <buffer> <M-r> <Plug>(xmpfilter-run)
+    autocmd FileType ruby xmap <buffer> <M-r> <Plug>(xmpfilter-run)
+    autocmd FileType ruby imap <buffer> <M-r> <Plug>(xmpfilter-run)
