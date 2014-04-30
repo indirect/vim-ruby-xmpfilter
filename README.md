@@ -1,4 +1,8 @@
-Use xmpfilter directly from vim, with no external (e.g. gem) dependencies
+# vim-ruby-xmpfilter
+
+A plugin for vim that adds integration with xmpfilter, with no external (e.g. gem) dependencies. xmpfilter is part of [rcodetools](https://github.com/tnoda/rcodetools). It takes a ruby file as input, executes the file, and inserts the literal values of each line ending in `# =>`.
+
+Here's an example of what using xmpfilter looks like:
 
 ![Example](https://github.com/t9md/t9md/blob/master/img/vim-ruby-xmpfilter_anime.gif?raw=true)
 
