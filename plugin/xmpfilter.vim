@@ -20,8 +20,12 @@ set cpo&vim
 
 " VARIABLES: {{{
 "=================================================================
+if !exists('g:rcodetools_dir')
+  let g:xmpfilter_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
+endif
+
 if !exists('g:xmpfilter_cmd')
-  let g:xmpfilter_cmd = "xmpfilter -a"
+  let g:xmpfilter_cmd = "ruby -I" . g:xmpfilter_dir . "/rcodetools/lib " . g:xmpfilter_dir . "/rcodetools/bin/xmpfilter -a"
 endif
 "}}}
 
